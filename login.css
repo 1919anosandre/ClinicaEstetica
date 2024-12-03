@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(255, 255, 255);
+    color: #FF007F; 
+    font-family: Arial, sans-serif; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0; 
+}
+
+
+#logo img {
+    width: 200px;
+    height: 200px;
+}
+
+#logo {
+    color: #ff4081;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-right: 50px;
+    top: 0;
+    left: 0;
+}
+
+
+h1 {
+    margin-bottom: 20px; 
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+#authForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+padding: 10px;
+height: 300px;
+}
+
+input {
+    margin: 10px; 
+    padding: 15px; 
+    border: 1px solid #FF007F; 
+    border-radius: 5px; 
+    width: 200px; 
+    color: #FF007F;
+}
+
+.alinharbotoes{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+button {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 15px 15px; 
+    cursor: pointer; 
+    margin: 10px; 
+    transition: background-color 0.3s; 
+    width: 120px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #218838; 
+}
+
+#status {
+    margin-top: 20px; 
+    font-weight: bold; 
+}
