@@ -1,6 +1,19 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+
+#voltar img {
+    width: 30px;
 }
 
 #detalhes {
@@ -19,8 +32,8 @@ body {
 
 
 #logo img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 #logo {
@@ -29,8 +42,8 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: 900;
-    font-size: 1.8rem;
-    margin-right: 50px;
+    font-size: 2.1rem;
+    margin: auto;
 }
 
 nav ul {
@@ -99,12 +112,6 @@ nav ul li a:hover::after {
     border-radius: 10px;
 }
 
-#agendamento h2 {
-    font-size: 1.7rem;
-    color: #ff4081;
-    font-weight: 700;
-
-}
 
 #clinica-img {
     width: 100%;
@@ -146,24 +153,25 @@ nav ul li a:hover::after {
 @keyframes animacao-fale-conosco {
     0% {
         transform: scale(1);
-        /* Tamanho original */
     }
 
     50% {
         transform: scale(1.2);
-        /* Aumenta o tamanho */
     }
 
     100% {
         transform: scale(1);
-        /* Retorna ao tamanho original */
     }
 }
 
-.titulo {
+.titulo,
+#agendamento h2,
+h1,
+.artigo h3 {
     font-size: 1.7rem;
-    color: rgb(255, 1, 158);
     font-weight: 700;
+    color: #ff4081;
+    text-align: center;
 }
 
 .imagem {
@@ -189,12 +197,6 @@ nav ul li a:hover::after {
     align-items: center;
 }
 
-.artigo h3 {
-    font-size: 1.7rem;
-    color: rgb(255, 1, 158);
-    font-weight: 700;
-}
-
 .tratamento {
     display: flex;
     justify-content: space-around;
@@ -218,8 +220,32 @@ nav ul li a:hover::after {
     height: 300px;
 }
 
-@media all and(max-width: 767px){
-.tratamento{
-flex-direction: column;
-}
+@media all and (max-width: 767px) {
+    #logo {
+        font-size: 1.7rem;
+    }
+
+    .tratamento {
+        flex-direction: column;
+    }
+
+    .titulo,
+    .artigo h3,
+    #agendamento h2 {
+        font-size: 1.4rem;
+    }
+
+    .Imagem,
+    #clinica-img {
+        width: 60%;
+    }
+
+    .descricao {
+        font-size: 1.1rem;
+    }
+
+    #card {
+        width: 90%;
+    }
+
 }
