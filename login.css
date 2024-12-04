@@ -81,6 +81,9 @@ button:hover {
     background-color: #218838; 
 }
 
+#resetOptions button{
+width: 300px;
+}
 #status {
     margin-top: 20px; 
     font-weight: bold; 

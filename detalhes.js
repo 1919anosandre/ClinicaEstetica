@@ -80,34 +80,86 @@ Resultados Personalizados: Com a orientação de um dermatologista, é possível
 } else if (tratamento === 'limpeza') {
     titulo = 'Limpeza de Pele';
     imagemSrc = 'img/limpeza-pele.jpg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre a limpeza de pele.';
+    descricao = `<p class ='descricao'> A limpeza de pele é um procedimento estético que visa remover impurezas, células mortas, cravos e outras obstruções dos poros, promovendo uma pele mais saudável e revitalizada. Esse tratamento pode ser realizado em clínicas de estética ou em casa (de forma mais simples), mas a versão profissional oferece resultados mais profundos e seguros. Abaixo está uma explicação do processo típico em uma clínica:
+<br><br>
+Passo a Passo de uma Limpeza de Pele Profissional
+Higienização:
+<br><br>
+Limpeza inicial com produtos específicos para remover maquiagem, sujeira e oleosidade superficial da pele.
+Esfoliação:
+<br><br>
+Aplicação de um esfoliante para remover células mortas e ajudar a desobstruir os poros.
+Vaporização (opcional):
+<br><br>
+Uso de vapor para dilatar os poros, facilitando a extração de cravos e outras impurezas.
+Extração:
+<br><br>
+Remoção manual ou com instrumentos adequados para extrair cravos e espinhas sem causar danos à pele.
+Máscara Calmante:
+<br><br>
+Aplicação de uma máscara específica para acalmar a pele, reduzir a vermelhidão e hidratar.
+Finalização:
+<br><br>
+Uso de produtos como tônicos, hidratantes e protetor solar para equilibrar e proteger a pele.
+    </p>`;
+
+    
+    video_container = `  <section class="artigo">
+    <article>
+        <h3>Dicas de cuidado com a pele</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mZuoxqKV_Zc?si=BZNPLjTBrJ_M3WUT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </section>`
+
+    beneficios_tratamento = `
+  <div class = "tratamento">
+ <div class="texto-tratamento">
+   <p>
+   Benefícios do Tratamento
+   <br><br>
+Redução de cravos e espinhas.
+   <br><br>
+Melhoria na textura e aparência da pele.
+   <br><br>
+Controle da oleosidade.
+   <br><br>
+Prevenção de problemas dermatológicos.
+</p>
+</div>
+<<img src="img/limpeza-de-pele-antes-e-depois.jpg" alt="" class= 'slide'>
+<img src="img/Limpeza-De-Pele-Profunda-2-1.jpg" alt="" class= 'slide'>
+<img src="img/resenha Creme de limpeza e Hidratante Mary Kay.jpg" alt="" class= 'slide'>
+
+</div>
+`
+    video.innerHTML = video_container;
+    beneficios.innerHTML = beneficios_tratamento
+
 } else if (tratamento === 'butox') {
     titulo = 'Butox';
     imagemSrc = 'img/butox.jpg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre o tratamento com butox.';
+    descricao = `<p class ='descricao'>    </p>`;
 } else if (tratamento === 'hidratacao') {
     titulo = 'Hidratação e Nutrição';
     imagemSrc = 'img/hidrataçãonutriçao.jpg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre hidratação e nutrição da pele.';
+    descricao = `<p class ='descricao'>    </p>`;
 } else if (tratamento === 'radiofrequencia') {
     titulo = 'Radiofrequência';
     imagemSrc = 'img/radiofrequencia.jpg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre o tratamento de radiofrequência.';
+    descricao = `<p class ='descricao'>    </p>`;
 } else if (tratamento === 'ozonio') {
     titulo = 'Terapia com Ozônio';
     imagemSrc = 'img/Terapia com ozônio.jpeg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre a terapia com ozônio.';
+    descricao = `<p class ='descricao'>    </p>`;
 } else if (tratamento === 'ledterapia') {
     titulo = 'LedTerapia';
     imagemSrc = 'img/ledterapia.jpg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre a LedTerapia.';
+    descricao = `<p class ='descricao'>    </p>`;
 } else if (tratamento === 'peeling') {
     titulo = 'Peeling Facial';
     imagemSrc = 'img/peeling-facial-clidecem-e1677678321278-846x1024.jpg'; // Caminho da imagem
-    descricao = 'Informações detalhadas sobre o peeling facial.';
+    descricao = `<p class ='descricao'>    </p>`;
 } else {
     titulo = 'Tratamento não encontrado';
-    descricao = 'Desculpe, não conseguimos encontrar informações sobre este tratamento.';
+    descricao = `<p class ='descricao'>    </p>`;
 }
 
 // Montar o HTML para exibir os detalhes

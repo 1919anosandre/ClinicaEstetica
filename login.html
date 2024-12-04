@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="logo"> <img src="img/beauty-salon-logo-template_22857-6.avif" alt="">Clinica Essencial</div>
+    <div id="logo"> <img src="img/beauty-salon-logo-template_22857-6.avif" alt=""> Essencial</div>
     <form id="authForm">
         <h1>Faça login ou cadastre-se em nosso site </h1>
         <div>
@@ -23,12 +23,21 @@
             <label for="password">Senha</label>
             <input type="password" id="password" required>
         </div>
+        <div>
+            <a href="#" id="forgotPasswordLink">Esqueci minha senha</a>
+        </div>
+        
         <div class="alinharbotoes">
             <button type="button" id="signUpBtn">Cadastrar</button>
             <button type="button" id="signInBtn">Entrar</button>
         </div>
     </form>
-
+    <div id="resetOptions" style="display: none;">
+        <h2>Como você deseja recuperar sua senha?</h2>
+        <button id="resetByEmail">Enviar código por e-mail</button>
+        <button id="resetByPhone">Enviar código por telefone</button>
+    </div>
+    
 </body>
 
 </html>

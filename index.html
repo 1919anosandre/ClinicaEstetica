@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/beauty-salon-logo-template_22857-6.avif" type="image/x-icon">
 
-    <title>Clínica Estética</title>
+    <title>Clínica Essencial</title>
 </head>
 
 <body>
     <header>
-        <h1>Bem-vindo à Nossa Clínica Estética</h1>
         <nav>
-            <div id="logo"> <img src="img/beauty-salon-logo-template_22857-6.avif" alt="">Clinica Essencial</div>
+            <div id="logo"> <img src="img/beauty-salon-logo-template_22857-6.avif" alt=""> Essencial</div>
 
             <ul>
                 <li><a href="#home">home</a></li>
                 <li><a href="#sobreNos">Sobre Nós</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#agendamento">Agendamento</a></li>
-                <li id="usuario"><a href="login.html"><img src="img/user.png" alt=""></a></li>
                 <li id="fale-conosco-button"><a href="#contato">Fale conosco</a></li>
+                <li id="usuario"><a href="login.html"><img src="img/user.png" alt=""></a></li>
+                <div id="horario-funcionamento"></div>
             </ul>
         </nav>
     </header>
@@ -174,26 +174,31 @@
         <button id="nextBtn" class="nav-btn" onclick="changeFeedback(1)">Próximo</button>
     </section>
 
-
     <section id="mensagem-enviar">
         <form id="form-mensagem">
-            <label for="message">Mensagem:</label>
-            <textarea id="mensagem" name="message" required></textarea>
+            <label for="mensagem">Deixe sua avaliação:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <br>
+
+            <label for="servico">Selecione o serviço:</label>
+            <select id="servico" name="servico" required>
+                <option value="Limpeza de Pele">Limpeza de Pele</option>
+                <option value="Massagem Facial">Massagem Facial</option>
+                <option value="Design de Sobrancelhas">Design de Sobrancelhas</option>
+                <option value="Depilação">Depilação</option>
+                <option value="Tratamento Capilar">Tratamento Capilar</option>
+            </select>
+            <br>
+
+            <label for="data">Data do Serviço:</label>
+            <input type="date" id="data" name="data" required>
             <br>
 
             <button type="submit">Enviar</button>
         </form>
     </section>
 
-    <div id="mensagens-display"></div> <!-- Section to display messages -->
-
-    <section id="artigo">
-        <article>
-            <h2>Dicas de cuidado para sua pele</h2>
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/PLUorDoO1t0" frameborder="0"
-                allowfullscreen></iframe>
-        </article>
-    </section>
+    <div id="mensagens-display"></div> <!-- Seção para exibir os comentários -->
 
     <section id="contato">
         <div class="content">
@@ -216,14 +221,14 @@
                     </div>
 
                 </ul>
-
             </div>
+
             <img src="img/mulherligando.png" alt="Imagem de Contato">
 
     </section>
 
     <footer>
-        <p>&copy; 2024 Clínica Estética. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Clínica Essenciaç. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>

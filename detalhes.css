@@ -160,10 +160,6 @@ nav ul li a:hover::after {
     }
 }
 
-.h1 {
-    text-align: center;
-}
-
 .titulo {
     font-size: 1.7rem;
     color: rgb(255, 1, 158);

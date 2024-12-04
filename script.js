@@ -1,3 +1,27 @@
+//horario de funcionamento
+function horario_funcionamento(){
+document.addEventListener('DOMContentLoaded', ()=>{
+    const exibir_on_of = document.getElementById('horario-funcionamento');
+// pega o horario local
+const hora = new Date();
+const horarioFuncionamento = hora.getHours();
+
+//verifica o horario de funcionamento da clinica 
+if(horarioFuncionamento >=8 && horarioFuncionamento <=18){
+exibir_on_of.textContent = 'Aberto';
+exibir_on_of.style.color = 'green';
+exibir_on_of.style.fontSize = '1.3rem';
+}
+else{
+exibir_on_of.textContent = 'Fechado';
+exibir_on_of.style.color = 'red';
+exibir_on_of.style.fontSize = '1.3rem';
+
+
+}
+})
+}
+horario_funcionamento()
 
 document.addEventListener('DOMContentLoaded', function () {
     // Recupera mensagens do localStorage e exibe

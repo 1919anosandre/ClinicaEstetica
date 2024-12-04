@@ -51,15 +51,6 @@ nav ul li a {
 
 }
 
-#fale-conosco-button {
-    animation: animacao-fale-conosco 3s infinite;
-    /* Aplica a animação pulse */
-    background-color: #4CAF50;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding: 2px;
-}
-
 nav ul li a::after {
     content: " ";
     width: 0%;
@@ -77,6 +68,10 @@ nav ul li a:hover::after {
 
 #usuario img {
     width: 60px;
+}
+
+#horario-funcionamento{
+margin-left: 20px;
 }
 
 @keyframes animacao-fale-conosco {
@@ -278,6 +273,22 @@ strong {
 
 #mensagens-display {
     margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.comentario-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comentario-item p {
+    margin: 5px 0;
+}
+
+.comentario-item small {
+    color: #555;
 }
 
 .comment {
@@ -479,6 +490,13 @@ strong {
 #contato ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#instagram , #facebook , #wathsapp{
+margin: 0 12px;
 }
 
 #contato li {
@@ -488,7 +506,6 @@ strong {
 #contato img {
     width: 400px;
     height: auto;
-    border-radius: 8px;
 }
 
 #wathsapp,
@@ -510,6 +527,8 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #f8f9fa;
+    color: #333;
+    font-size: 1.2rem;
 }
 
 @media all and (max-width: 767px) {
