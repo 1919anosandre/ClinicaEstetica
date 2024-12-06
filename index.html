@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/beauty-salon-logo-template_22857-6.avif" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght@6..12,87.5,200..1000&display=swap"
+        rel="stylesheet">
 
     <title>Clínica Essencial</title>
 </head>
@@ -13,6 +17,12 @@
 <body>
     <header>
         <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <div id="logo"> <img src="img/beauty-salon-logo-template_22857-6.avif" alt=""> Essencial</div>
 
             <ul>
@@ -45,63 +55,55 @@
 
     <h2 id='servicosh2'>Serviços</h2>
     <section id="servicos">
-        <div id="card">
+        <div class="card">
             <img src="img/estrias.jpg" class="imagem" alt="">
             <h3 class="titulo">Tratamento para estrias</h3>
             <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=estrias" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/limpeza-pele.jpg" class="imagem" alt="">
             <h3 class="titulo">Limpeza de Pele</h3>
-            <p class="descricao">Vamos se limpar</p>
             <a href="detalhes.html?tratamento=limpeza" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/butox.jpg" class="imagem" alt="">
             <h3 class="titulo">Butox</h3>
-            <p class="descricao">Fazer butox, bebê</p>
             <a href="detalhes.html?tratamento=butox" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/hidrataçãonutriçao.jpg" class="imagem" alt="">
             <h3 class="titulo">Hidratação e Nutrição</h3>
-            <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=hidratacao" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/radiofrequencia.jpg" class="imagem" alt="">
             <h3 class="titulo">Radiofrequência</h3>
-            <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=radiofrequencia" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/Terapia com ozônio.jpeg" class="imagem" alt="">
             <h3 class="titulo">Terapia com Ozônio</h3>
-            <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=ozonio" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/ledterapia.jpg" class="imagem" alt="">
             <h3 class="titulo">LedTerapia</h3>
-            <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=ledterapia" class="vermais">Ver Mais</a>
         </div>
 
-        <div id="card">
+        <div class="card">
             <img src="img/peeling-facial-clidecem-e1677678321278-846x1024.jpg" class="imagem" alt="">
             <h3 class="titulo">Peeling Facial</h3>
-            <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=peeling" class="vermais">Ver Mais</a>
         </div>
     </section>
-
 
     <h2 id="destaquesh2">Por que escolher a <strong>Essencial</strong></h2>
     <section id="destaques">
@@ -198,7 +200,7 @@
         </form>
     </section>
 
-    <div id="mensagens-display"></div> <!-- Seção para exibir os comentários -->
+    <div id="mensagens-display"></div>
 
     <section id="contato">
         <div class="content">

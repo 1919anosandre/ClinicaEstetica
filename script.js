@@ -90,3 +90,35 @@ showFeedback(currentFeedbackIndex);
 
 // Inicia a rotação automática de feedbacks
 startFeedbackRotation();
+ // Seleciona a container e os cards
+ const container = document.getElementById('servicos');
+ const cards = document.querySelectorAll('.card');
+
+ // Função para verificar a visibilidade da container e dos cards
+ const handleScroll = () => {
+   const triggerBottom = window.innerHeight * 0.8;
+
+   // Quando a container aparecer na tela, animar ela
+   const containerTop = container.getBoundingClientRect().top;
+   if (containerTop < triggerBottom) {
+     container.classList.add('show');
+   }
+
+   // Anima os cards quando eles entram na tela
+   cards.forEach(card => {
+     const cardTop = card.getBoundingClientRect().top;
+     // Se o card está visível, adiciona a classe de animação
+     if (cardTop < triggerBottom) {
+       card.classList.add('show');
+     } else {
+       // Se o card não está mais visível, remove a classe de animação
+       card.classList.remove('show');
+     }
+   });
+ };
+
+ // Evento de rolagem para disparar a função
+ window.addEventListener('scroll', handleScroll);
+
+ // Executa ao carregar a página
+ handleScroll();

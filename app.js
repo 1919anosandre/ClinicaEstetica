@@ -112,83 +112,69 @@ document.getElementById("resetByPhone").addEventListener("click", () => {
     // https://firebase.google.com/docs/auth/web/phone-auth
     alert(`Um código de verificação será enviado para o número: ${phoneNumber}`);
 });
-
-// Inicializando o Firebase Firestore
 const db = getFirestore(app);
 
-// Referências do formulário e do elemento para exibir os comentários
+// Referências do DOM
 const form = document.getElementById("form-mensagem");
-const mensagensDisplay = document.getElementById("mensagens-display");
+const mensagensDisplay = document.createElement("div"); // Container para exibir as mensagens
+document.body.appendChild(mensagensDisplay); // Adiciona ao final do corpo do documento
 
-// Função para enviar o comentário ao Firestore
+// Função para enviar avaliação ao Firestore
 form.addEventListener("submit", async (e) => {
-    e.preventDefault();  // Previne o comportamento padrão do formulário
+  e.preventDefault();
 
-    // Captura os dados do formulário
-    const mensagem = document.getElementById("mensagem").value;
-    const servico = document.getElementById("servico").value;
-    const dataServico = document.getElementById("data").value;
+  // Coleta os dados do formulário
+  const mensagem = document.getElementById("mensagem").value.trim();
+  const servico = document.getElementById("servico").value;
+  const dataServico = document.getElementById("data").value;
 
-    if (mensagem.trim() === "" || !servico || !dataServico) {  // Verifica se todos os campos estão preenchidos
-        alert("Por favor, preencha todos os campos!");
-        return;
-    }
+  if (!mensagem || !servico || !dataServico) {
+    alert("Por favor, preencha todos os campos!");
+    return;
+  }
 
-    try {
-        // Envia o comentário para o Firestore
-        await addDoc(collection(db, "comentarios"), {
-            comentario: mensagem,
-            servico: servico,
-            dataServico: dataServico, // A data do serviço fornecida pelo usuário
-            data: Timestamp.now(), // Adiciona a data e hora do comentário
-            usuario: auth.currentUser ? auth.currentUser.email : "Anônimo", // Usuário logado (se houver)
-        });
+  try {
+    // Adiciona a avaliação no Firestore
+    await addDoc(collection(db, "avaliacoes"), {
+      mensagem,
+      servico,
+      dataServico,
+      timestamp: Timestamp.now(),
+    });
 
-        alert("Comentário enviado com sucesso!");
-        form.reset(); // Limpa o formulário após o envio
-
-        // Atualiza a lista de comentários exibidos
-        exibirComentarios();
-    } catch (error) {
-        console.error("Erro ao enviar comentário:", error);
-        alert("Erro ao enviar comentário. Tente novamente.");
-    }
+    alert("Avaliação enviada com sucesso!");
+    form.reset(); // Limpa o formulário após o envio
+  } catch (error) {
+    console.error("Erro ao enviar avaliação:", error);
+    alert("Erro ao enviar avaliação. Tente novamente.");
+  }
 });
 
-// Função para exibir os comentários no Firestore
-async function exibirComentarios() {
-    // Limpa a seção onde os comentários serão exibidos
-    mensagensDisplay.innerHTML = "";
+// Função para exibir as avaliações em tempo real
+const exibirAvaliacoes = () => {
+  const q = query(collection(db, "avaliacoes"), orderBy("timestamp", "desc"));
 
-    try {
-        // Faz a leitura dos comentários no Firestore
-        const querySnapshot = await getDocs(collection(db, "comentarios"));
+  // Monitora as alterações no Firestore
+  onSnapshot(q, (querySnapshot) => {
+    mensagensDisplay.innerHTML = ""; // Limpa as mensagens antigas
+    querySnapshot.forEach((doc) => {
+      const { mensagem, servico, dataServico, timestamp } = doc.data();
+      const dataFormatada = new Date(dataServico).toLocaleDateString();
+      const horarioFormatado = new Date(timestamp.toMillis()).toLocaleString();
 
-        // Para cada comentário, criamos um elemento HTML para exibi-lo
-        querySnapshot.forEach((doc) => {
-            const { comentario, servico, dataServico, data, usuario } = doc.data();
-            const dataFormatada = data.toDate().toLocaleString(); // Formata a data do comentário
-            const dataServicoFormatada = new Date(dataServico).toLocaleDateString(); // Formata a data do serviço
+      const mensagemDiv = document.createElement("div");
+      mensagemDiv.classList.add("mensagem-item");
+      mensagemDiv.innerHTML = `
+        <p><strong>Serviço:</strong> ${servico}</p>
+        <p><strong>Mensagem:</strong> ${mensagem}</p>
+        <p><strong>Data do Serviço:</strong> ${dataFormatada}</p>
+        <small><em>Postado em: ${horarioFormatado}</em></small>
+        <hr>
+      `;
+      mensagensDisplay.appendChild(mensagemDiv);
+    });
+  });
+};
 
-            // Cria um div para cada comentário
-            const comentarioDiv = document.createElement("div");
-            comentarioDiv.classList.add("comentario-item");
-            comentarioDiv.innerHTML = `
-                <p><strong>Comentário:</strong> ${comentario}</p>
-                <p><strong>Serviço:</strong> ${servico}</p>
-                <p><strong>Data do Serviço:</strong> ${dataServicoFormatada}</p>
-                <p><strong>Usuário:</strong> ${usuario}</p>
-                <small><em>Postado em: ${dataFormatada}</em></small>
-                <hr>
-            `;
-
-            // Adiciona o comentário à página
-            mensagensDisplay.appendChild(comentarioDiv);
-        });
-    } catch (error) {
-        console.error("Erro ao buscar comentários:", error);
-    }
-}
-
-// Chama a função para exibir os comentários assim que a página carregar
-window.onload = exibirComentarios;
+// Carrega as avaliações ao iniciar a página
+window.onload = exibirAvaliacoes;
