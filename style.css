@@ -141,12 +141,9 @@ h1 {
 .image2 {
     position: absolute;
     width: 100%;
-    /* Ajuste conforme necessário */
     height: auto;
-    /* Ajuste conforme necessário */
     opacity: 0;
     transform: translateX(100%);
-    /* Começa fora da tela à direita */
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -158,17 +155,13 @@ h1 {
     gap: 11px;
     margin-left: 10px;
     opacity: 0;
-    /* Inicialmente invisível */
     transform: translateX(-100px);
-    /* Inicialmente deslocado para a esquerda */
     transition: opacity 1s ease-out, transform 1s ease-out;
-    /* Transição suave */
 }
 
-#servicos.show {
+#servicos.show{
     opacity: 1;
     transform: translateX(0);
-    /* Quando rolar, ele vai para a posição final */
 }
 
 #servicosh2,
@@ -199,17 +192,15 @@ strong {
     justify-items: center;
     align-items: start;
     opacity: 0;
-    /* Começam invisíveis */
     transform: translateX(100px);
-    /* Inicia deslocado para a direita */
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .card.show {
     opacity: 1;
     transform: translateX(0);
-    /* Vai para a posição final */
 }
+
 
 .card h3 {
     color: #333;
@@ -278,7 +269,6 @@ strong {
 }
 
 #destaques {
-    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -309,11 +299,9 @@ strong {
     display: grid;
     gap: 15px;
     padding: 2px;
-    height: 320px;
     width: 420px;
     margin-left: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
 }
 
 #card-destaques h3 {
@@ -485,6 +473,9 @@ strong {
     font-weight: 700;
 
 }
+.feedback p{
+font-size: 1em;
+}
 
 .nav-btn {
     background-color: #333;
@@ -524,7 +515,7 @@ strong {
 }
 
 #contato h2,
-#artigo h2 {
+#artigo h2, #recado h2{
     font-size: 2em;
     color: #ff4081;
     margin-bottom: 15px;
@@ -586,6 +577,27 @@ strong {
     margin-top: 10px;
 }
 
+#recado{
+    background-color: #f5f5dc;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#recado p {
+color: #333;
+font-weight: 700;
+font-size: 1.2rem;
+padding: 4px 4%;
+}
+
 footer {
     text-align: center;
     padding: 10px;
@@ -594,28 +606,100 @@ footer {
     font-size: 1.2rem;
 }
 
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d4d;
+    transform: rotate(-45deg);
+    animation: heartbeat 1s infinite ease-in-out;
+    margin-top: 30px;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+
 @media all and (max-width: 767px) {
-    nav ul li a {
-        /* display: none;*/
+    nav ul   {
+        flex-direction: column;
     }
 
     #conteudo-principal-home,
     #content,
-    #destaques {
+    #destaques , .content {
         flex-direction: column;
         width: 100%;
+    }
+
+    #home{
+    padding: 4px 4%;
+    }
+
+    #conteudo-principal-home img{
+    width: 70%;
+    height: 250px;
     }
 
     #home h2,
     #agendamentoh2,
     #sobrenos h2,
-    #feedback,
-    .titulo {
-        font-size: 1.4rem;
+    #feedback h2,
+    .titulo , #destaquesh2 , h3 , #form-mensagem label , #recado h2 , #contato h2{
+        font-size: 1.1rem;
     }
 
-    #home p {
-        font-size: 1.1rem;
+    #home p , #sobreNos p  , .feedback p , #recado p , #contato p{
+        font-size: 0.9rem;
+
+    }
+
+    #form-mensagem textarea{
+    width: 70%;
+    }
+    
+    #feedback , #mensagem-enviar , #recado , #contato , #sobreNos{
+    width: 70%;
+    }
+
+    #mensagem-enviar button{
+    width: 200px;
+    }
+
+    #sobreNos img , #contato img{
+    width: 80%;
+    margin: auto;
+    }
+
+    #facebook , #instagram , #wathsapp{
+    width: 50px;
+    height: 50px;
     }
 
     #servicos,
@@ -623,7 +707,7 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
-    .card {
+    .card  , #card-destaques{
         width: 80%;
         max-width: 250px;
     }

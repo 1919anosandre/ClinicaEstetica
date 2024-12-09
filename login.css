@@ -1,13 +1,12 @@
 body {
     background-color: rgb(255, 255, 255);
-    color: #FF007F; 
+    color: #FF007F;
     font-family: 'Nunito Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-    margin: 0; 
+padding: 0;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
 }
 
 
@@ -17,66 +16,92 @@ body {
 }
 
 #logo {
-    color: #ff4081;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 900;
-    font-size: 2rem;
-    margin-right: 50px;
-    top: 0;
-    left: 0;
 }
 
+#logo h1 {
+    color: #ff4081;
+    font-weight: 900;
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
 
-h1 {
-    margin-bottom: 20px; 
-    font-size: 1.9rem;
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
     font-weight: 800;
     letter-spacing: 2px;
     color: #ff4081;
 }
 
-#authForm{
+#container-principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-principal img {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#authForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-background-color: rgb(255, 255, 255);
-border-radius: 10px;
-padding: 10px;
-height: 300px;
+    padding: 10px;
+    height: 300px;
+
 }
 
-a{
-color: #ff4081;
-text-decoration: none;
-font-size: 1.1rem;
-}
-input {
-    margin: 10px; 
-    padding: 15px; 
-    border: 1px solid #FF007F; 
-    border-radius: 5px; 
-    width: 200px; 
+label {
     color: #ff4081;
+    font-size: 1.2rem;
+    font-weight: 700;
+
 }
 
-.alinharbotoes{
-display: flex;
-justify-content: center;
-align-items: center;
+a {
+    color: #ff4081;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: #FF007F;
+}
+
+input {
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #FF007F;
+    border-radius: 5px;
+    width: 200px;
+    color: #FF007F;
+}
+
+.alinharbotoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
-    background-color: #28a745; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 15px 15px; 
-    cursor: pointer; 
-    margin: 10px; 
-    transition: background-color 0.3s; 
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 15px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
     width: 120px;
     font-size: 1.1rem;
     font-weight: 700;
@@ -84,13 +109,89 @@ button {
 }
 
 button:hover {
-    background-color: #218838; 
+    background-color: #FF007F;
+
 }
 
-#resetOptions button{
-width: 300px;
+#resetOptions button {
+    width: 300px;
 }
+
 #status {
-    margin-top: 20px; 
-    font-weight: bold; 
+    margin-top: 20px;
+    font-weight: bold;
 }
+
+#animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d6d;
+    clip-path: polygon(50% 0%, 0% 40%, 100% 40%, 50% 100%);
+    animation: fall 3s linear infinite, sway 1.5s ease-in-out infinite;
+    opacity: 0.9;
+  }
+  
+  /* Animação de queda */
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
+  /* Animação de oscilação */
+  @keyframes sway {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+  }
+
+  @media all and (max-width: 767px){
+#container-principal{
+flex-direction: column;
+padding: 2px 4%;
+}
+
+#container-principal img{
+width: 80%;
+}
+
+
+
+#logo h1{
+font-size: 1.3rem;
+margin-top: 10px;
+}
+
+h2{
+font-size: 1.1rem;
+}
+
+#authForm{
+margin-top: 10px;
+}
+
+input{
+width: 90%;
+}
+
+  }
+  

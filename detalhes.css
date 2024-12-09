@@ -229,6 +229,10 @@ h1,
         flex-direction: column;
     }
 
+    img{
+    width: 70%;
+    }
+
     .titulo,
     .artigo h3,
     #agendamento h2 {
@@ -246,6 +250,10 @@ h1,
 
     #card {
         width: 90%;
+    }
+
+    iframe{
+    width: 80%;
     }
 
 }
