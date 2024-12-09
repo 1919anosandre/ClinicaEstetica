@@ -466,12 +466,22 @@ strong {
     margin: 10px 0;
 }
 
+#perfilfeedbackpronto{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#perfilfeedbackpronto img{
+width: 60px;
+height: 60px;
+border-radius: 50%;
+}
 .feedback h4 {
     font-size: 1em;
     color: #4CAF50;
-    margin-top: 5px;
     font-weight: 700;
-
+    margin-left: 5px;
 }
 .feedback p{
 font-size: 1em;
