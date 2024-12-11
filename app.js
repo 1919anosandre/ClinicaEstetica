@@ -121,59 +121,59 @@ document.body.appendChild(mensagensDisplay); // Adiciona ao final do corpo do do
 
 // Função para enviar avaliação ao Firestore
 form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Coleta os dados do formulário
-  const mensagem = document.getElementById("mensagem").value.trim();
-  const servico = document.getElementById("servico").value;
-  const dataServico = document.getElementById("data").value;
+    // Coleta os dados do formulário
+    const mensagem = document.getElementById("mensagem").value.trim();
+    const servico = document.getElementById("servico").value;
+    const dataServico = document.getElementById("data").value;
 
-  if (!mensagem || !servico || !dataServico) {
-    alert("Por favor, preencha todos os campos!");
-    return;
-  }
+    if (!mensagem || !servico || !dataServico) {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
 
-  try {
-    // Adiciona a avaliação no Firestore
-    await addDoc(collection(db, "avaliacoes"), {
-      mensagem,
-      servico,
-      dataServico,
-      timestamp: Timestamp.now(),
-    });
+    try {
+        // Adiciona a avaliação no Firestore
+        await addDoc(collection(db, "avaliacoes"), {
+            mensagem,
+            servico,
+            dataServico,
+            timestamp: Timestamp.now(),
+        });
 
-    alert("Avaliação enviada com sucesso!");
-    form.reset(); // Limpa o formulário após o envio
-  } catch (error) {
-    console.error("Erro ao enviar avaliação:", error);
-    alert("Erro ao enviar avaliação. Tente novamente.");
-  }
+        alert("Avaliação enviada com sucesso!");
+        form.reset(); // Limpa o formulário após o envio
+    } catch (error) {
+        console.error("Erro ao enviar avaliação:", error);
+        alert("Erro ao enviar avaliação. Tente novamente.");
+    }
 });
 
 // Função para exibir as avaliações em tempo real
 const exibirAvaliacoes = () => {
-  const q = query(collection(db, "avaliacoes"), orderBy("timestamp", "desc"));
+    const q = query(collection(db, "avaliacoes"), orderBy("timestamp", "desc"));
 
-  // Monitora as alterações no Firestore
-  onSnapshot(q, (querySnapshot) => {
-    mensagensDisplay.innerHTML = ""; // Limpa as mensagens antigas
-    querySnapshot.forEach((doc) => {
-      const { mensagem, servico, dataServico, timestamp } = doc.data();
-      const dataFormatada = new Date(dataServico).toLocaleDateString();
-      const horarioFormatado = new Date(timestamp.toMillis()).toLocaleString();
+    // Monitora as alterações no Firestore
+    onSnapshot(q, (querySnapshot) => {
+        mensagensDisplay.innerHTML = ""; // Limpa as mensagens antigas
+        querySnapshot.forEach((doc) => {
+            const { mensagem, servico, dataServico, timestamp } = doc.data();
+            const dataFormatada = new Date(dataServico).toLocaleDateString();
+            const horarioFormatado = new Date(timestamp.toMillis()).toLocaleString();
 
-      const mensagemDiv = document.createElement("div");
-      mensagemDiv.classList.add("mensagem-item");
-      mensagemDiv.innerHTML = `
+            const mensagemDiv = document.createElement("div");
+            mensagemDiv.classList.add("mensagem-item");
+            mensagemDiv.innerHTML = `
         <p><strong>Serviço:</strong> ${servico}</p>
         <p><strong>Mensagem:</strong> ${mensagem}</p>
         <p><strong>Data do Serviço:</strong> ${dataFormatada}</p>
         <small><em>Postado em: ${horarioFormatado}</em></small>
         <hr>
       `;
-      mensagensDisplay.appendChild(mensagemDiv);
+            mensagensDisplay.appendChild(mensagemDiv);
+        });
     });
-  });
 };
 
 // Carrega as avaliações ao iniciar a página

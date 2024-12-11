@@ -49,4 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Criar vários corações
     setInterval(createHeart, 300);
   });
-  
+  function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.querySelector('.toggle-password');
+
+    // Alterna o tipo do input e o ícone
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.textContent = '🙈'; // Ícone de olho fechado
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.textContent = '👁️'; // Ícone de olho aberto
+    }
+}

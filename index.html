@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght@6..12,87.5,200..1000&display=swap"
         rel="stylesheet">
-
     <title>Clínica Essencial</title>
 </head>
 
@@ -31,11 +30,28 @@
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#agendamento">Agendamento</a></li>
                 <li id="fale-conosco-button"><a href="#contato">Fale conosco</a></li>
-                <li id="usuario"><a href="login.html"><img src="img/user.png" alt=""></a></li>
+                <li id="usuario"><img src="img/user.png" alt=""></li>
+                <li><a href="login.html">Entrar</a></li>
                 <div id="horario-funcionamento"></div>
             </ul>
         </nav>
     </header>
+
+    <!-- Modal do Perfil -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Perfil do Usuário</h2>
+            <img src="img/user.png" id="modalProfileImage" alt="Imagem de Perfil" class="modal-img">
+            <input type="file" id="uploadInput" hidden>
+            <button id="uploadButton">Alterar Imagem</button>
+            <p><strong>Nome:</strong> <span id="profileName"><input type="text" placeholder="digite seu nome"></span>
+            </p>
+            <p><strong>Email:</strong> <span id="profileEmail">fulano@email.com</span></p>
+            <p><strong>Telefone:</strong> <span id="profilePhone"><input type="text"
+                        placeholder="digite seu telefone"></span></p>
+        </div>
+    </div>
 
     <section id="home">
         <div id="conteudo-principal-home">
@@ -159,29 +175,29 @@
                 </p>
                 <div id="perfilfeedbackpronto">
                     <img src="img/mulherfeed1.webp" alt="">
-                <h4>- Maria Silva</h4>
-            </div>
+                    <h4>- Maria Silva</h4>
+                </div>
             </div>
             <div class="feedback" id="feedback2" style="display: none;">
                 <p>"Fui muito bem atendida e me senti à vontade durante todo o processo. Recomendo a todos!"</p>
                 <div id="perfilfeedbackpronto">
                     <img src="img/mulherfeed2.jpg" alt="">
-                <h4>- Ana Clara</h4>
-            </div>
+                    <h4>- Ana Clara</h4>
+                </div>
             </div>
             <div class="feedback" id="feedback3" style="display: none;">
                 <p>"Os profissionais são super qualificados e atenciosos. Estou muito feliz com os resultados!"</p>
                 <div id="perfilfeedbackpronto">
                     <img src="img/mulherfeed3.webp" alt="">
-                <h4>- Juliana Pereira</h4>
+                    <h4>- Juliana Pereira</h4>
+                </div>
             </div>
-                    </div>
             <div class="feedback" id="feedback4" style="display: none;">
                 <p>"A experiência foi incrível! A equipe é muito profissional e me deixou confortável o tempo todo."</p>
                 <div id="perfilfeedbackpronto">
                     <img src="img/mulherfeed4.webp" alt="">
-                <h4>- Fernanda Lima</h4>
-            </div>
+                    <h4>- Fernanda Lima</h4>
+                </div>
             </div>
         </div>
         <button id="prevBtn" class="nav-btn" onclick="changeFeedback(-1)">Anterior</button>
@@ -243,7 +259,11 @@
 
     <section id="recado">
         <h2>Recadinho Especial</h2>
-        <p>A mulher carrega em si uma força que ilumina e transforma o mundo ao seu redor. Sua beleza vai além do físico; está em seu olhar, em sua voz, em suas ações que inspiram e acolhem. Cuidar de si mesma é um ato de amor-próprio, um lembrete de que ela merece tudo o que há de melhor. Ter autoestima é reconhecer seu valor único, é saber que suas qualidades e imperfeições são o que a tornam especial. Quando uma mulher se cuida e acredita em si, ela floresce, espalhando confiança e luz por onde passa.</p>
+        <p>A mulher carrega em si uma força que ilumina e transforma o mundo ao seu redor. Sua beleza vai além do
+            físico; está em seu olhar, em sua voz, em suas ações que inspiram e acolhem. Cuidar de si mesma é um ato de
+            amor-próprio, um lembrete de que ela merece tudo o que há de melhor. Ter autoestima é reconhecer seu valor
+            único, é saber que suas qualidades e imperfeições são o que a tornam especial. Quando uma mulher se cuida e
+            acredita em si, ela floresce, espalhando confiança e luz por onde passa.</p>
         <div class="heart"></div>
 
     </section>
@@ -252,7 +272,8 @@
         <p>&copy; 2024 Clínica Essenciaç. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
+=
+<script src="script.js"></script>
 
 </html>

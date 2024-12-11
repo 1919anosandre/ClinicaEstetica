@@ -17,6 +17,65 @@ header {
     text-align: center;
 }
 
+/* Modal */
+.modal {
+    display: none;
+    /* Oculto por padrão */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 330px;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.modal-content p {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.modal-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-content p strong {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.modal-content input {
+    border-radius: 10px;
+    padding: 10px;
+    color: #ff4081;
+    font-size: 1.1rem;
+}
+
 #logo img {
     width: 100px;
     height: 100px;
@@ -30,6 +89,25 @@ header {
     font-weight: 900;
     font-size: 1.8rem;
 }
+
+/* Estilo para o botão do menu hamburguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+}
+
 
 nav ul {
     list-style-type: none;
@@ -159,7 +237,7 @@ h1 {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-#servicos.show{
+#servicos.show {
     opacity: 1;
     transform: translateX(0);
 }
@@ -466,25 +544,27 @@ strong {
     margin: 10px 0;
 }
 
-#perfilfeedbackpronto{
-display: flex;
-justify-content: center;
-align-items: center;
+#perfilfeedbackpronto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#perfilfeedbackpronto img{
-width: 60px;
-height: 60px;
-border-radius: 50%;
+#perfilfeedbackpronto img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
+
 .feedback h4 {
     font-size: 1em;
     color: #4CAF50;
     font-weight: 700;
     margin-left: 5px;
 }
-.feedback p{
-font-size: 1em;
+
+.feedback p {
+    font-size: 1em;
 }
 
 .nav-btn {
@@ -525,7 +605,8 @@ font-size: 1em;
 }
 
 #contato h2,
-#artigo h2, #recado h2{
+#artigo h2,
+#recado h2 {
     font-size: 2em;
     color: #ff4081;
     margin-bottom: 15px;
@@ -587,7 +668,7 @@ font-size: 1em;
     margin-top: 10px;
 }
 
-#recado{
+#recado {
     background-color: #f5f5dc;
     padding: 20px;
     margin: 20px auto;
@@ -602,10 +683,10 @@ font-size: 1em;
 }
 
 #recado p {
-color: #333;
-font-weight: 700;
-font-size: 1.2rem;
-padding: 4px 4%;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 4px 4%;
 }
 
 footer {
@@ -648,68 +729,113 @@ footer {
 }
 
 @keyframes heartbeat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1) rotate(-45deg);
     }
+
     50% {
         transform: scale(1.2) rotate(-45deg);
     }
 }
 
 @media all and (max-width: 767px) {
-    nav ul   {
+    nav ul {
+        display: none;
         flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul.show {
+        display: flex;
     }
 
     #conteudo-principal-home,
     #content,
-    #destaques , .content {
+    #destaques,
+    .content,
+    #mensagem-enviar {
         flex-direction: column;
         width: 100%;
+        align-items: center;
+        margin: auto;
     }
 
-    #home{
-    padding: 4px 4%;
+    #home {
+        padding: 4px 4%;
     }
 
-    #conteudo-principal-home img{
-    width: 70%;
-    height: 250px;
+    #conteudo-principal-home img {
+        width: 70%;
+        height: 250px;
     }
 
     #home h2,
     #agendamentoh2,
     #sobrenos h2,
     #feedback h2,
-    .titulo , #destaquesh2 , h3 , #form-mensagem label , #recado h2 , #contato h2{
+    .titulo,
+    #destaquesh2,
+    h3,
+    #form-mensagem label,
+    #recado h2,
+    #contato h2 {
         font-size: 1.1rem;
     }
 
-    #home p , #sobreNos p  , .feedback p , #recado p , #contato p{
+    #home p,
+    #sobreNos p,
+    .feedback p,
+    #recado p,
+    #contato p {
         font-size: 0.9rem;
 
     }
 
-    #form-mensagem textarea{
-    width: 70%;
-    }
-    
-    #feedback , #mensagem-enviar , #recado , #contato , #sobreNos{
-    width: 70%;
+    #form-mensagem textarea {
+        width: 70%;
     }
 
-    #mensagem-enviar button{
-    width: 200px;
+    #feedback,
+    #mensagem-enviar,
+    #recado,
+    #contato,
+    #sobreNos {
+        width: 70%;
     }
 
-    #sobreNos img , #contato img{
-    width: 80%;
-    margin: auto;
+    #mensagem-enviar button {
+        width: 200px;
     }
 
-    #facebook , #instagram , #wathsapp{
-    width: 50px;
-    height: 50px;
+    #sobreNos img,
+    #contato img {
+        width: 80%;
+        margin: auto;
+    }
+
+    #facebook,
+    #instagram,
+    #wathsapp {
+        width: 50px;
+        height: 50px;
     }
 
     #servicos,
@@ -717,9 +843,11 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
-    .card  , #card-destaques{
+    .card,
+    #card-destaques {
         width: 80%;
         max-width: 250px;
+        margin: auto;
     }
 
     .card h3 {
