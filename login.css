@@ -80,13 +80,9 @@ a:hover {
 }
 
 input {
-    /* Adiciona o tipo text para manter os estilos */
     padding: 15px;
-    /* Espaçamento interno */
     border: 1px solid #FF007F;
-    /* Borda do input */
     border-radius: 10px;
-    /* Bordas arredondadas */
     width: 220px;
     margin-top: 10px;
     font-size: 1.1rem;
@@ -95,16 +91,13 @@ input {
 
 .password-container {
     position: relative;
-    /* Para posicionar o ícone dentro do input */
 }
 
 .toggle-password {
     position: absolute;
     right: 10px;
-    /* Distância da borda direita */
     top: 50%;
     transform: translateY(-50%);
-    /* Centraliza verticalmente */
     cursor: pointer;
 }
 
