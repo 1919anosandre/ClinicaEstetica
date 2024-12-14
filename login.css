@@ -1,6 +1,5 @@
 body {
     background-color: rgb(255, 255, 255);
-    color: #FF007F;
     font-family: 'Nunito Sans', sans-serif;
     padding: 0;
     height: 100vh;
@@ -23,8 +22,8 @@ body {
 
 #logo h1 {
     color: #ff4081;
-    font-weight: 900;
-    font-size: 2.5rem;
+    font-weight: 700;
+    font-size: 2.3rem;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
 }

@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    /*font-family: 'Nunito Sans', sans-serif;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,7 +20,6 @@ header {
 /* Modal */
 .modal {
     display: none;
-    /* Oculto por padrão */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -45,6 +44,7 @@ header {
     font-size: 1.3rem;
     color: #333;
     font-weight: 700;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .modal-img {
@@ -67,6 +67,7 @@ header {
     font-size: 1.4rem;
     font-weight: 700;
     color: #333;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .modal-content input {
@@ -86,7 +87,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1.8rem;
 }
 
@@ -125,6 +126,7 @@ nav ul li a {
     text-transform: capitalize;
     position: relative;
     font-weight: 700;
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -199,6 +201,8 @@ h1 {
     color: #ff4081;
     font-weight: 900;
     font-size: 3.2rem;
+    font-family: 'Playfair Display', serif;
+
 }
 
 #home h2 {
@@ -206,6 +210,8 @@ h1 {
     font-weight: 700;
     font-size: 2.9rem;
     letter-spacing: 1px;
+    font-family: 'Lora', serif;
+
 }
 
 #home p {
@@ -213,6 +219,8 @@ h1 {
     color: #666;
     font-weight: 600;
     font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .image1,
@@ -249,6 +257,8 @@ h1 {
     font-size: 2.1rem;
     font-weight: 700;
     text-align: center;
+    font-family: 'Lora', serif;
+
 }
 
 strong {
@@ -283,6 +293,8 @@ strong {
 .card h3 {
     color: #333;
     font-size: 1.3rem;
+    font-family: 'Lora', serif;
+font-weight: 700;
 }
 
 
@@ -333,6 +345,8 @@ strong {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .card img {
@@ -388,6 +402,8 @@ strong {
     font-weight: 700;
     text-transform: capitalize;
     margin-left: 5px;
+    font-family: 'Lora', serif;
+
 }
 
 #card-destaques p {
@@ -396,9 +412,10 @@ strong {
     text-align: center;
     color: #666;
     padding: 12px;
+    font-family: 'Open Sans', sans-serif; 
 }
 
-#mensagens-display {
+#mensagens-exibidas {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -412,6 +429,7 @@ strong {
 
 .comentario-item p {
     margin: 5px 0;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .comentario-item small {
@@ -451,6 +469,8 @@ strong {
     color: #ff4081;
     margin-bottom: 10px;
     font-weight: 700;
+    font-family: 'Lora', serif;
+
 }
 
 #sobreNos img {
@@ -469,6 +489,7 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 #form-mensagem {
@@ -485,6 +506,7 @@ strong {
     font-size: 2.1rem;
     margin-left: 10px;
     font-weight: 700;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 #form-mensagem textarea {
@@ -531,6 +553,8 @@ strong {
     color: #ff4081;
     margin-bottom: 15px;
     font-weight: 700;
+    font-family: 'Lora', serif;
+
 }
 
 .feedback-container {
@@ -565,6 +589,7 @@ strong {
 
 .feedback p {
     font-size: 1em;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .nav-btn {
@@ -611,6 +636,8 @@ strong {
     color: #ff4081;
     margin-bottom: 15px;
     font-weight: 700;
+    font-family: 'Lora', serif;
+
 
 }
 
@@ -619,6 +646,7 @@ strong {
     color: #666;
     line-height: 1.6;
     margin: 5px 0;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 #contato a {
@@ -660,12 +688,13 @@ strong {
     flex-direction: column;
 }
 
-#wathsapp img,
-#instagram img,
-#facebook img {
+#wathsapp svg,
+#instagram svg,
+#facebook svg {
     height: 50px;
     width: 50px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 #recado {
@@ -686,6 +715,7 @@ strong {
     color: #333;
     font-weight: 700;
     font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif; 
     padding: 4px 4%;
 }
 
@@ -695,6 +725,8 @@ footer {
     background-color: #f8f9fa;
     color: #333;
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 

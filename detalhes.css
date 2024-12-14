@@ -12,8 +12,20 @@ body {
     margin-right: auto;
 }
 
-#voltar img {
-    width: 30px;
+#voltar a {
+font-size: 1.3rem;
+font-weight: 700;
+color: #333;
+text-decoration: none;
+font-family: 'Open Sans', sans-serif; 
+}
+
+#voltar a:hover{
+color: #ff4081;
+}
+
+#voltar svg {
+    width: 35px;
 }
 
 #detalhes {
@@ -44,6 +56,7 @@ body {
     font-weight: 900;
     font-size: 2.1rem;
     margin: auto;
+    font-family: 'Playfair Display', serif;
 }
 
 nav ul {
@@ -139,6 +152,7 @@ nav ul li a:hover::after {
     text-align: center;
     margin: auto;
     text-decoration: none;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 #agendamento a:hover {
@@ -168,10 +182,12 @@ nav ul li a:hover::after {
 #agendamento h2,
 h1,
 .artigo h3 {
-    font-size: 1.7rem;
+    font-size: 2.1rem;
     font-weight: 700;
     color: #ff4081;
     text-align: center;
+    letter-spacing: 1px;
+    font-family: 'Lora', serif;
 }
 
 .imagem {
@@ -212,6 +228,7 @@ h1,
     font-size: 1.2rem;
     font-weight: 500;
     padding: 2px 4%;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .tratamento img {
@@ -253,7 +270,7 @@ h1,
     }
 
     iframe{
-    width: 80%;
+    width: 90%;
     }
 
 }

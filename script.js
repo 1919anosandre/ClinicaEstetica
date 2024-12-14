@@ -5,6 +5,9 @@ function horario_funcionamento() {
         // pega o horario local
         const hora = new Date();
         const horarioFuncionamento = hora.getHours();
+        //pegar dia 
+        const diasFuncionamento = new Date()
+        const exibirDias = diasFuncionamento.getDay()
 
         //verifica o horario de funcionamento da clinica 
         if (horarioFuncionamento >= 8 && horarioFuncionamento <= 18) {
@@ -16,22 +19,24 @@ function horario_funcionamento() {
             exibir_on_of.textContent = 'Fechado';
             exibir_on_of.style.color = 'red';
             exibir_on_of.style.fontSize = '1.3rem';
-
-
+        } 
+        if (exibirDias === 5 || exibirDias === 6) { // Sexta e sábado
+            exibir_on_of.textContent = 'Fechado';
+            exibir_on_of.style.color = 'red';
+            exibir_on_of.style.fontSize = '1.3rem';
+            alert('O estabelecimento está fechado. Abre: seg à sex, 08h00 às 18h00');
         }
+
     })
 }
 horario_funcionamento()
-
 document.addEventListener('DOMContentLoaded', function () {
     // Recupera mensagens do localStorage e exibe
     const mensagensDisplay = document.getElementById('mensagens-display');
     const mensagens = JSON.parse(localStorage.getItem('mensagens')) || [];
 
     mensagens.forEach(function (mensagem) {
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment');
-        newComment.textContent = mensagem;
+        const newComment = criarElementoMensagem(mensagem);
         mensagensDisplay.appendChild(newComment);
     });
 
@@ -39,25 +44,59 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('form-mensagem').addEventListener('submit', function (event) {
         event.preventDefault(); // Previne o envio padrão do formulário
 
-        // Obtém a mensagem do textarea
-        const mensagem = document.getElementById('mensagem').value;
+        const nome = document.getElementById('nome').value;
+        const imagem = document.getElementById('imagem').value;
+        const texto = document.getElementById('mensagem').value;
+        const dataHora = new Date().toLocaleString();
+
+        // Cria o objeto da mensagem
+        const mensagem = { nome, imagem, texto, dataHora };
 
         // Adiciona a nova mensagem ao localStorage
         mensagens.push(mensagem);
         localStorage.setItem('mensagens', JSON.stringify(mensagens));
 
-        // Cria um novo div para exibir a mensagem
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment');
-        newComment.textContent = mensagem;
-
-        // Anexa o novo comentário à seção de exibição
+        // Cria e exibe o novo comentário
+        const newComment = criarElementoMensagem(mensagem);
         mensagensDisplay.appendChild(newComment);
 
-        // Limpa o textarea após o envio
+        // Limpa o formulário após o envio
+        document.getElementById('nome').value = '';
+        document.getElementById('imagem').value = '';
         document.getElementById('mensagem').value = '';
     });
+
+    // Função para criar um elemento de mensagem
+    function criarElementoMensagem(mensagem) {
+        const commentWrapper = document.createElement('div');
+        commentWrapper.classList.add('comment');
+
+        const userImage = document.createElement('img');
+        userImage.src = mensagem.imagem;
+        userImage.alt = mensagem.nome;
+        userImage.style.width = '50px';
+        userImage.style.height = '50px';
+        userImage.style.borderRadius = '50%';
+
+        const userName = document.createElement('strong');
+        userName.textContent = mensagem.nome;
+
+        const messageText = document.createElement('p');
+        messageText.textContent = mensagem.texto;
+
+        const timestamp = document.createElement('small');
+        timestamp.textContent = `Enviado em: ${mensagem.dataHora}`;
+
+        // Monta o comentário
+        commentWrapper.appendChild(userImage);
+        commentWrapper.appendChild(userName);
+        commentWrapper.appendChild(messageText);
+        commentWrapper.appendChild(timestamp);
+
+        return commentWrapper;
+    }
 });
+
 
 let currentFeedbackIndex = 0;
 const feedbacks = document.querySelectorAll('.feedback');
