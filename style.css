@@ -1,10 +1,10 @@
 * {
     list-style: none;
     text-decoration: none;
+    border: none;
 }
 
 body {
-    /*font-family: 'Nunito Sans', sans-serif;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -507,6 +507,15 @@ font-weight: 700;
     margin-left: 10px;
     font-weight: 700;
     font-family: 'Open Sans', sans-serif; 
+}
+
+#nome, #imagem{
+background-color: white;
+border: 01px solid #d6d1d1;
+width: 200px;
+padding: 10px;
+margin-top: 5px;
+font-size: 1.1rem;
 }
 
 #form-mensagem textarea {

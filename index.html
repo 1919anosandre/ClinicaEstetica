@@ -85,7 +85,7 @@
             <p class="descricao">Aloha bebê</p>
             <a href="detalhes.html?tratamento=estrias" class="vermais">Ver Mais</a>
         </div>
-
+        
         <div class="card">
             <img src="img/limpeza-pele.jpg" class="imagem" alt="">
             <h3 class="titulo">Limpeza de Pele</h3>
@@ -211,11 +211,11 @@
         <button id="prevBtn" class="nav-btn" onclick="changeFeedback(-1)">Anterior</button>
         <button id="nextBtn" class="nav-btn" onclick="changeFeedback(1)">Próximo</button>
     </section>
-    <section id="mensagens-enviar">
+    <section id="mensagem-enviar">
         <!-- Formulário de mensagem -->
         <form id="form-mensagem">
             <input type="text" id="nome" placeholder="Seu nome" required>
-            <input type="text" id="imagem" placeholder="URL da imagem" required>
+            <input type="image" id="imagem" placeholder="URL da imagem" required>
             <textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
             
             <label for="servico">Selecione o serviço:</label>
@@ -236,6 +236,7 @@
             <button type="submit">Enviar</button>
         </form>
     </section>
+    <br>
     
     <!-- Contêiner para exibir as mensagens -->
     <div id="mensagens-display"></div>
@@ -287,7 +288,7 @@
     </footer>
 
 </body>
-=
+
 <script src="script.js"></script>
 
 </html>

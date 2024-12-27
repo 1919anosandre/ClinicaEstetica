@@ -35,10 +35,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const mensagensDisplay = document.getElementById('mensagens-display');
     const mensagens = JSON.parse(localStorage.getItem('mensagens')) || [];
 
-    mensagens.forEach(function (mensagem) {
-        const newComment = criarElementoMensagem(mensagem);
-        mensagensDisplay.appendChild(newComment);
-    });
+    // Função para exibir mensagens
+    function exibirMensagens() {
+        mensagensDisplay.innerHTML = ''; // Limpa a exibição
+        mensagens.forEach(function (mensagem) {
+            const newComment = criarElementoMensagem(mensagem);
+            mensagensDisplay.appendChild(newComment);
+        });
+    }
+
+    // Exibe mensagens ao carregar a página
+    exibirMensagens();
 
     // Adiciona o evento de envio do formulário
     document.getElementById('form-mensagem').addEventListener('submit', function (event) {
@@ -56,9 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
         mensagens.push(mensagem);
         localStorage.setItem('mensagens', JSON.stringify(mensagens));
 
-        // Cria e exibe o novo comentário
-        const newComment = criarElementoMensagem(mensagem);
-        mensagensDisplay.appendChild(newComment);
+        // Limpa a exibição e exibe todas as mensagens novamente
+        exibirMensagens();
 
         // Limpa o formulário após o envio
         document.getElementById('nome').value = '';
@@ -96,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return commentWrapper;
     }
 });
-
 
 let currentFeedbackIndex = 0;
 const feedbacks = document.querySelectorAll('.feedback');

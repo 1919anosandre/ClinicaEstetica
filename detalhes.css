@@ -106,25 +106,23 @@ nav ul li a:hover::after {
     width: 60px;
 }
 
+#form-agendamento{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #f5f5dc;
+width: 450px;
+border-radius: 10px;
+margin: auto;
+padding: 5px;
+}
 
-#agendamento {
+.card {
     display: flex;
-    align-items: center;
-    width: 100%;
     justify-content: center;
     flex-direction: column;
 }
-
-#card {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #f5f5dc;
-    height: 430px;
-    width: 450px;
-    border-radius: 10px;
-}
-
 
 #clinica-img {
     width: 100%;
@@ -132,32 +130,51 @@ nav ul li a:hover::after {
     margin: auto;
 }
 
-#agendamento li {
+.card label {
     color: #333;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-decoration: none;
     list-style: none;
     text-align: center;
 }
 
-#agendamento a {
-    background-color: #333;
-    width: 200px;
-    color: white;
+.card input , .card select {
+    background-color: #ffffff;
+    width: 220px;
     padding: 8px;
     border-radius: 10px;
-    border: 01px solid rgb(233, 221, 221);
+    border: 01px solid rgb(212, 201, 201);
     font-size: 1.2rem;
     margin-top: 10px;
     text-align: center;
     margin: auto;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif; 
+    color: #ff4081;
 }
 
-#agendamento a:hover {
-    background-color: #ff4081;
-    cursor: pointer;
+.card textarea{
+    width: 280px;
+    height: 240px;
+    border: 01px solid rgb(212, 201, 201);
+}
+
+.card button{
+margin-top: 10px;
+background-color: #333;
+border: none;
+border-radius: 10px;
+font-family: 1.3rem;
+letter-spacing: 1px;
+padding: 10px;
+color: white;
+font-family: 'Montserrat', sans-serif;
+
+}
+
+.card button:hover{
+background-color: #ff4081;
+cursor: pointer;;
 }
 
 #icones {
@@ -181,7 +198,7 @@ nav ul li a:hover::after {
 .titulo,
 #agendamento h2,
 h1,
-.artigo h3 {
+.artigo h3 , h4 {
     font-size: 2.1rem;
     font-weight: 700;
     color: #ff4081;

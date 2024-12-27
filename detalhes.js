@@ -524,9 +524,9 @@ Os resultados são progressivos e podem ser percebidos após algumas sessões.
 Geralmente, são necessárias 5 a 10 sessões, com intervalos semanais ou quinzenais, dependendo do objetivo.
 </p>
 </div>
-           <img src="img/ledterapia-antes-dps.png" alt="" class= 'slide'>
+        <img src= "img/ledterapialummer.jpg" alt="" class= 'slide'>
         <img src="img/Ledterapia_topo.webp" alt="" class= 'slide'>
-        <img src="img/antes-depois-ledterapia1.jpg.crdownload" alt="" class= 'slide'>
+        <img src="img/ledterapia-antes-dps.png" alt="" class= 'slide'>
 
 </div>
 `
