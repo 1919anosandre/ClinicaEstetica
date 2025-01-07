@@ -191,6 +191,31 @@ window.addEventListener('click', (event) => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Carregar dados do localStorage ao carregar a página
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    if (usuario) {
+        document.getElementById("nome").value = usuario.nome || '';
+        document.getElementById("email").value = usuario.email || '';
+        document.getElementById("telefone").value = usuario.telefone || '';
+    }
+
+    // Adicionar evento de envio do formulário
+    document.querySelector(".modal-content").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita o envio do formulário
+
+        const usuario = {
+            nome: document.getElementById("nome").value,
+            email: document.getElementById("email").value,
+            telefone: document.getElementById("telefone").value
+        };
+
+        // Salvar os dados no localStorage
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+        alert("Dados salvos com sucesso!");
+    });
+});
+
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.querySelector('nav ul');
 

@@ -80,14 +80,18 @@ a:hover {
 
 input {
     padding: 15px;
-    border: 1px solid #FF007F;
+    border: 1px solid #cfc7cb;
     border-radius: 10px;
     width: 220px;
     margin-top: 10px;
     font-size: 1.1rem;
     color: #ff4081;
+    outline: none;
 }
 
+input:focus {
+    border-color: #ff95d6; /* Cor da borda ao clicar (foco) */
+  }
 .password-container {
     position: relative;
 }
