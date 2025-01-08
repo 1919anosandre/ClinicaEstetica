@@ -9,6 +9,7 @@ const tratamento = getQueryParam('tratamento');
 const detalhesDiv = document.getElementById('detalhes');
 const video = document.getElementById('video');
 const beneficios = document.getElementById('beneficios')
+const agendamento = document.getElementById('agendamentos')
 
 // Exibir detalhes com base no tratamento selecionado
 let titulo = '';
@@ -16,6 +17,7 @@ let imagemSrc = '';
 let descricao = '';
 let video_container = '';
 let beneficios_tratamento = '';
+let agendamentos = '';
 
 if (tratamento === 'estrias') {
     titulo = 'Tratamento para Estrias';
@@ -73,9 +75,31 @@ Resultados Personalizados: Com a orientação de um dermatologista, é possível
 
 </div>
 `
-    video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
 
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Estrias</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
+    video.innerHTML = video_container;
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
 
 } else if (tratamento === 'limpeza') {
     titulo = 'Limpeza de Pele';
@@ -130,8 +154,31 @@ Prevenção de problemas dermatológicos.
 
 </div>
 `
+
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Limpeza de pele</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
 
 } else if (tratamento === 'butox') {
     titulo = 'Butox';
@@ -208,8 +255,31 @@ Pacientes com doenças neuromusculares, como miastenia grave.
 
 </div>
 `
+
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Botox</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
 
 
 } else if (tratamento === 'hidratacao') {
@@ -274,8 +344,31 @@ A hidratação e nutrição adequadas são essenciais para o bem-estar físico e
 
 </div>
 `
+    
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Hidratação</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
 
 } else if (tratamento === 'radiofrequencia') {
     titulo = 'Radiofrequência';
@@ -339,8 +432,32 @@ A manutenção pode ser necessária após o tratamento inicial.
         <img src="img/as-imagens-antes-e-depois-comprovam-o-excelentes-resultados-da-Radiofrecuencia-facial.jpg" alt="" class= 'slide'>
 </div>
 `
+    
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Radiofrequencia</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
+
 } else if (tratamento === 'ozonio') {
     titulo = 'Terapia com Ozônio';
     imagemSrc = 'img/Terapia com ozônio.jpeg'; // Caminho da imagem
@@ -428,8 +545,31 @@ Indivíduos com doenças cardíacas severas.
         <img src="img/antes-depois-ozonio1.png" alt="" class= 'slide'>
 </div>
 `
+ 
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Ozonio</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
 
 } else if (tratamento === 'ledterapia') {
     titulo = 'LedTerapia';
@@ -530,8 +670,32 @@ Geralmente, são necessárias 5 a 10 sessões, com intervalos semanais ou quinze
 
 </div>
 `
+
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Ledterapia</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
+
 
 } else if (tratamento === 'peeling') {
     titulo = 'Peeling Facial';
@@ -641,8 +805,31 @@ Consulte sempre um dermatologista para garantir a segurança e eficácia do proc
         <img src="img/peeling-thumb_1160x790.jpg" alt="" class= 'slide'>
 </div>
 `
+ 
+agendamentos = `<h4>Agendamento</h4>
+<form id="form-agendamento">
+  <div class="card">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+  
+    <label for="dataHora">Data e Hora:</label>
+    <input type="datetime-local" id="dataHora" required>
+  
+    <label for="servico">Serviço:</label>
+    <select id="servico">
+      <option value="limpeza">Peeling</option>
+    </select>
+  
+    <label for="observacoes">Observações:</label>
+    <textarea id="observacoes"></textarea>
+  
+    <button type="submit">Agendar</button>
+  </div>
+  </form> `
+
     video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+    beneficios.innerHTML = beneficios_tratamento;
+    agendamento.innerHTML = agendamentos;
 
 } else {
     titulo = 'Tratamento não encontrado';
@@ -667,8 +854,7 @@ Consulte sempre um dermatologista para garantir a segurança e eficácia do proc
 
 </div>
 `
-    video.innerHTML = video_container;
-    beneficios.innerHTML = beneficios_tratamento
+
 }
 
 // Montar o HTML para exibir os detalhes
@@ -677,9 +863,6 @@ detalhesDiv.innerHTML = `
     <img src="${imagemSrc}" alt="${titulo}" class="imagem">
     <p class="descricao">${descricao}</p>
 `;
-
-
-
 
 //galeria das promoçoes e lançamentos do site
 let slideIndex = 0;
