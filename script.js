@@ -191,28 +191,32 @@ window.addEventListener('click', (event) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Carregar dados do localStorage ao carregar a página
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
-    if (usuario) {
-        document.getElementById("nome").value = usuario.nome || '';
-        document.getElementById("email").value = usuario.email || '';
-        document.getElementById("telefone").value = usuario.telefone || '';
-    }
+    const usuario = JSON.parse(localStorage.getItem("usuario")) || {}; // Garante que seja um objeto
+
+    // Preencher os campos do formulário com os dados do localStorage
+    document.getElementById("nome").value = usuario.nome || '';
+    document.getElementById("email").value = usuario.email || '';
+    document.getElementById("telefone").value = usuario.telefone || '';
 
     // Adicionar evento de envio do formulário
-    document.querySelector(".modal-content").addEventListener("submit", function(event) {
+    document.querySelector(".modal-content").addEventListener("submit", function (event) {
         event.preventDefault(); // Evita o envio do formulário
 
-        const usuario = {
+        // Obter os valores dos campos
+        const usuarioAtualizado = {
             nome: document.getElementById("nome").value,
             email: document.getElementById("email").value,
-            telefone: document.getElementById("telefone").value
+            telefone: document.getElementById("telefone").value,
         };
 
         // Salvar os dados no localStorage
-        localStorage.setItem("usuario", JSON.stringify(usuario));
+        localStorage.setItem("usuario", JSON.stringify(usuarioAtualizado));
         alert("Dados salvos com sucesso!");
+
+        // Verificar os dados salvos no localStorage (apenas para depuração)
+        console.log("Dados no localStorage:", localStorage.getItem("usuario"));
     });
 });
 
@@ -221,4 +225,62 @@ const navMenu = document.querySelector('nav ul');
 
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('show');
+});
+const inputFile = document.querySelector("#picture__input");
+const pictureImage = document.querySelector(".picture__image");
+const pictureImageTxt = "carregar imagem";
+const changePictureButton = document.querySelector("#changePictureButton");
+
+pictureImage.innerHTML = pictureImageTxt;
+
+// Função para carregar a imagem salva no Local Storage
+function loadSavedImage() {
+  const savedImage = localStorage.getItem("savedPicture");
+  if (savedImage) {
+    const img = document.createElement("img");
+    img.src = savedImage;
+    img.classList.add("picture__img");
+
+    pictureImage.innerHTML = "";
+    pictureImage.appendChild(img);
+  } else {
+    pictureImage.innerHTML = pictureImageTxt;
+  }
+}
+
+// Chama a função ao carregar a página
+loadSavedImage();
+
+// Evento para alterar a imagem quando o arquivo for selecionado
+inputFile.addEventListener("change", function (e) {
+  const inputTarget = e.target;
+  const file = inputTarget.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function (e) {
+      const readerTarget = e.target;
+
+      const img = document.createElement("img");
+      img.src = readerTarget.result;
+      img.classList.add("picture__img");
+
+      // Salva a imagem no Local Storage
+      localStorage.setItem("savedPicture", readerTarget.result);
+
+      pictureImage.innerHTML = "";
+      pictureImage.appendChild(img);
+    });
+
+    reader.readAsDataURL(file);
+  } else {
+    pictureImage.innerHTML = pictureImageTxt;
+    localStorage.removeItem("savedPicture"); // Remove do Local Storage se nenhum arquivo for selecionado
+  }
+});
+
+// Evento do botão para abrir o seletor de arquivo
+changePictureButton.addEventListener("click", function () {
+  inputFile.click(); // Simula um clique no input de arquivo
 });

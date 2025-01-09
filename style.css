@@ -30,6 +30,8 @@ header {
     padding: 20px;
     border-radius: 8px;
     z-index: 1000;
+    overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
+height: 420px;
 }
 
 .modal-content {
@@ -56,12 +58,52 @@ font-size: 1.1rem;
 margin-top: 5px;
 }
 
-.modal-img {
-    width: 80px;
-    height: 80px;
+#picture__input {
+    display: none;
+  }
+  
+  .picture {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
     border-radius: 50%;
-    margin-bottom: 15px;
-}
+  }
+  
+  .picture:hover {
+    color: #777;
+    background: #ccc;
+  }
+  
+  .picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+  }
+  
+  .picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .picture__img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz com que a imagem cubra o contêiner */
+    display: block; /* Garante que a imagem seja renderizada corretamente */
+  }
+  
 
 .close {
     position: absolute;

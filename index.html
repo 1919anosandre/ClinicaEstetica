@@ -50,13 +50,16 @@
         <form class="modal-content">
             <span id="closeModal" class="close">&times;</span>
             <h2>Perfil do Usuário</h2>
-            <img src="img/user.png" id="foto" alt="Imagem de Perfil" class="modal-img">
-            <input type="file" id="uploadInput" hidden>
-            <button id="uploadButton">Alterar Imagem</button>
+            <label class="picture" for="picture__input" tabIndex="0">
+                <span class="picture__image"></span>
+              </label>
+              <input type="file" name="picture__input" id="picture__input" style="display: none;">
+              <button id="changePictureButton">Alterar Imagem</button>
+              
             <p><strong>Nome:</strong> <span id="nome"><input type="text" placeholder="digite seu nome"></span>
             </p>
             <p><strong>Email:</strong> <span id="email">fulano@email.com</span></p>
-            <p><strong>Telefone:</strong> <span id="telefone"><input type="text"
+            <p><strong>Telefone:</strong> <span id="telefone"><input type="tel"
                         placeholder="digite seu telefone"></span></p>
                         <button type="submit">Salvar</button>
                         <button type="button" id="editButton" style="display: none;">Editar</button>
