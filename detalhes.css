@@ -157,6 +157,7 @@ padding: 5px;
     width: 280px;
     height: 240px;
     border: 01px solid rgb(212, 201, 201);
+    margin: auto;
 }
 
 .card button{
