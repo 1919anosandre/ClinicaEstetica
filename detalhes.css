@@ -1,0 +1,333 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+
+#voltar a {
+font-size: 1.3rem;
+font-weight: 700;
+color: #333;
+text-decoration: none;
+font-family: 'Open Sans', sans-serif; 
+}
+
+#voltar a:hover{
+color: #ff4081;
+}
+
+#voltar svg {
+    width: 35px;
+}
+
+#detalhes {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.imagem {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+#logo img {
+    width: 120px;
+    height: 120px;
+}
+
+#logo {
+    color: #ff4081;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2.1rem;
+    margin: auto;
+    font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+
+nav ul li a {
+    display: inline;
+    margin: 0 15px;
+    color: #333;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    position: relative;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#fale-conosco-button {
+    animation: animacao-fale-conosco 3s infinite;
+    /* Aplica a animação pulse */
+    background-color: #4CAF50;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 2px;
+}
+
+nav ul li a::after {
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: rgb(255, 1, 158);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+#usuario img {
+    width: 60px;
+}
+
+#form-agendamento{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #f5f5dc;
+width: 450px;
+border-radius: 10px;
+margin: auto;
+padding: 5px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clinica-img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.card label {
+    color: #333;
+    font-size: 1.3rem;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+}
+
+.card input , .card select {
+    background-color: #ffffff;
+    width: 220px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 01px solid rgb(212, 201, 201);
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif; 
+    color: #ff4081;
+}
+
+.card textarea{
+    width: 280px;
+    height: 240px;
+    border: 01px solid rgb(212, 201, 201);
+    margin: auto;
+}
+
+.card button{
+margin-top: 10px;
+background-color: #333;
+border: none;
+border-radius: 10px;
+font-family: 1.3rem;
+letter-spacing: 1px;
+padding: 10px;
+color: white;
+font-family: 'Montserrat', sans-serif;
+width: 200px;
+
+}
+
+.card button:hover{
+background-color: #ff4081;
+cursor: pointer;;
+}
+
+#icones {
+    width: 25px;
+}
+
+@keyframes animacao-fale-conosco {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.titulo,
+#agendamento h2,
+h1,
+.artigo h3 , h4 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #ff4081;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: 'Lora', serif;
+}
+
+.imagem {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+}
+
+.descricao {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+}
+
+#beneficios {
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.artigo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tratamento {
+    display: flex;
+    justify-content: space-around;
+}
+
+.texto-tratamento {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-tratamento p {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 2px 4%;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.tratamento img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+}
+
+#contate-waths{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+#contate-waths p{
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif; 
+}
+/* Estilo do botão do WhatsApp */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+@media all and (max-width: 767px) {
+    #logo {
+        font-size: 1.7rem;
+    }
+
+    .tratamento {
+        flex-direction: column;
+    }
+
+    img{
+    width: 70%;
+    }
+
+    .titulo,
+    .artigo h3,
+    #agendamento h2 {
+        font-size: 1.4rem;
+    }
+
+    .Imagem,
+    #clinica-img {
+        width: 60%;
+    }
+
+    .descricao {
+        font-size: 1.1rem;
+    }
+
+    #card {
+        width: 90%;
+    }
+
+    iframe{
+    width: 90%;
+    }
+
+    #form-agendamento{
+    width: 90%;
+    }
+
+    p{
+    font-size: 0.6rem;
+    }
+
+}

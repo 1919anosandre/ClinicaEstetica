@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>authenticacão</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="img/logo-removebg-preview.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght@6..12,87.5,200..1000&display=swap"
+        rel="stylesheet">
+    <script type="module" src="app.js"></script>
+
+</head>
+
+<body>
+    <div id="animation-container"></div>
+
+    <div id="logo">
+        <img src="img/logo-removebg-preview.png" alt="">
+        <h1> Cliníca Essencial</h1>
+    </div>
+
+    <div id="container-principal">
+        <img src="img/beleza-mulher-removebg-preview-removebg-preview.png" class="slide-login" alt="">
+        <img src="img/beleza-mulher2-removebg-preview-removebg-preview-removebg-preview.png" class="slide-login" alt="">
+        <img src="img/beleza-mulher3-removebg-preview-removebg-preview-removebg-preview-removebg-preview-removebg-preview.png"
+            class="slide-login" alt="">
+
+        <form id="authForm">
+            <h2>Faça login ou cadastre-se em nosso site </h2>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div>
+                <div class="password-container">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" required>
+                    <span class="toggle-password" onclick="togglePassword()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                            <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                            <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                            <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                          </svg>
+                    </span>
+                </div>
+            </div>
+            <button type="button" class="signInGoogleBtn">Entrar com o google
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                  </svg>
+            </button>          
+
+            <a href="#" id="forgotPasswordLink">Esqueci minha senha</a>
+
+            <div class="alinharbotoes">
+                <button type="button" id="signUpBtn">Cadastrar</button>
+                <button type="button" id="signInBtn">Entrar</button>
+            </div>
+
+            <div id="resetOptions" style="display: none;">
+                <h3>Como você deseja recuperar sua senha?</h3>
+                <button id="resetByEmail">Enviar código por e-mail</button>
+                <button id="resetByPhone">Enviar código por telefone</button>
+            </div>
+    </div>
+
+    </form>
+
+    </div>
+</body>
+<script src="eventoslogin.js"></script>
+
+</html>

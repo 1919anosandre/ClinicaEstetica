@@ -1,0 +1,21 @@
+# Sistema de arquivos
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Diretórios de cache
+cache/
+tmp/
+temp/
+
+# Arquivos de configuração do IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Dependências
+node_modules/
+vendor/
